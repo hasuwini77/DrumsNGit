@@ -57,6 +57,7 @@ ul > li:hover {
 
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #a3c9a8;
@@ -66,4 +67,25 @@ footer {
 footer p {
   text-align: center;
   color: white;
+}
+
+.dark-mode header,
+.dark-mode footer {
+  background-color: #1b1b1b;
+}
+
+.dark-mode nav {
+  background-color: #373434;
+}
+
+body.dark-mode,
+.dark-mode.main-content {
+  background-color: #4e4e4e;
+  color: white;
+}
+
+.dark-mode ul > li:hover {
+  background-color: white;
+  padding: 10px;
+  color: black;
 }
