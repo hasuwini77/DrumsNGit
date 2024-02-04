@@ -5,5 +5,6 @@
 - Set up Cookie
 - Set up Local Storage
 - Set up filters
+- Set up API maybe?
 - Chill
   
