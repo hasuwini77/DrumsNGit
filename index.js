@@ -64,12 +64,13 @@ const showAllArticles = (articles) => {
 
   articles.forEach((article) => {
     divContent.innerHTML += ` 
+    <div class="article-content"> 
   <h2> ${article.title} </h2>
   <img class="article-img" src="${article.image}" alt="${article.title}">
   <p class="article-desc"> ${article.description} </p> 
   <p class="article-desc2"> ${article.para2} </p> 
   <p class="article-time"> ${article.time} </p> 
-  `;
+   </div> `;
   });
 };
 
