@@ -1,17 +1,45 @@
 const darkButton = document.querySelector(".dark-button");
+const body = document.querySelector("body");
 
-darkButton.addEventListener("click", () => {
-  document.querySelector("body").classList.toggle("dark-mode");
-
-  let darkModeElem = document.querySelector(".dark-mode");
-  if (darkModeElem) {
-    darkButton.innerHTML = `
-    <img class="light-icon" src="./img/mode.png" alt="light-mode-icon" />`;
-  } else {
-    darkButton.innerHTML = ` 
-        <img class="dark-icon" src="./img/night-mode.png" alt="dark-mode-icon" /> `;
+const toggleDarkMode = () => {
+  try {
+    body.classList.toggle("dark-mode");
+    updateDarkModeIcon();
+    saveDarkModePreference();
+  } catch (error) {
+    console.error("An error occurred while toggling dark mode:", error);
   }
-});
+};
+const updateDarkModeIcon = () => {
+  try {
+    darkButton.innerHTML = body.classList.contains("dark-mode") ? `<img class="light-icon" src="./img/mode.png" alt="light-mode-icon" />` : `<img class="dark-icon" src="./img/night-mode.png" alt="dark-mode-icon" />`;
+  } catch (error) {
+    console.error("An error occurred while updating dark mode icon:", error);
+  }
+};
+const saveDarkModePreference = () => {
+  try {
+    localStorage.setItem("darkModeEnabled", body.classList.contains("dark-mode"));
+  } catch (error) {
+    console.error("An error occurred while saving dark mode preference:", error);
+  }
+};
+
+const loadDarkModePreference = () => {
+  try {
+    const darkModeEnabled = localStorage.getItem("darkModeEnabled");
+    if (darkModeEnabled === "true") {
+      body.classList.add("dark-mode");
+    }
+    updateDarkModeIcon();
+  } catch (error) {
+    console.error("An error occurred while loading dark mode preference:", error);
+  }
+};
+
+darkButton.addEventListener("click", toggleDarkMode);
+
+document.addEventListener("DOMContentLoaded", loadDarkModePreference);
 
 class HomeContent {
   constructor(title, image, description, para2, time, tag) {
