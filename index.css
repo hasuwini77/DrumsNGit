@@ -206,3 +206,11 @@ body.dark-mode,
   padding: 10px;
   color: black;
 }
+
+@media screen and (max-width: 991px) {
+  .wrapper.show {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 20px;
+  }
+}
