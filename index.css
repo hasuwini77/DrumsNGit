@@ -73,10 +73,15 @@ button.dark-button {
   background-color: transparent;
   border-style: none;
 }
-.dark-icon {
+.dark-icon,
+.light-icon {
   height: 24px;
   width: 24px;
   background-color: transparent;
+}
+
+.light-icon {
+  background-color: rgba(255, 255, 255, 0.745);
 }
 .dark-mode header,
 .dark-mode footer {
