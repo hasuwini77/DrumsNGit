@@ -12,6 +12,7 @@ darkButton.addEventListener("click", () => {
         <img class="dark-icon" src="./img/night-mode.png" alt="dark-mode-icon" /> `;
   }
 });
+
 class HomeContent {
   constructor(title, image, description, para2, time) {
     this.title = title;
@@ -51,3 +52,21 @@ const thirdArticle = new HomeContent(
   "Incorporate this rudiment into your drumming vocabulary, and witness how it adds flair and complexity to your drum fills and solos.",
   "12 minutes"
 );
+
+let arrayOfArticles = [firstArticle, secondArticle, thirdArticle];
+
+const showAllArticles = (articles) => {
+  let divContent = document.querySelector(".main-content");
+
+  articles.forEach((article) => {
+    divContent.innerHTML += ` 
+  <h2> ${article.title} </h2>
+  <img class="article-img" src="${article.image}" alt="${article.title}">
+  <p class="article-desc"> ${article.description} </p> 
+  <p class="article-desc2"> ${article.para2} </p> 
+  <p class="article-time"> ${article.time} </p> 
+  `;
+  });
+};
+
+showAllArticles(arrayOfArticles);
