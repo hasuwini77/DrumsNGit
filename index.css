@@ -69,6 +69,15 @@ footer p {
   color: white;
 }
 
+button.dark-button {
+  background-color: transparent;
+  border-style: none;
+}
+.dark-icon {
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+}
 .dark-mode header,
 .dark-mode footer {
   background-color: #1b1b1b;
