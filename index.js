@@ -14,12 +14,13 @@ darkButton.addEventListener("click", () => {
 });
 
 class HomeContent {
-  constructor(title, image, description, para2, time) {
+  constructor(title, image, description, para2, time, tag) {
     this.title = title;
     this.image = image;
     this.description = description;
     this.para2 = para2;
     this.time = time;
+    this.tag = tag;
   }
 }
 
@@ -34,7 +35,8 @@ On the G string, use your ring finger on the 3rd fret.
 Skip the B string.
 Finally, on the high E string, use your pinky finger on the 5th fret.
 This chord creates a sophisticated and colorful harmony with its mix of dominant 7th, 9th, 11th, and sharp 11th intervals. Practice precise finger placement and experiment with incorporating this chord into jazz progressions to add depth and complexity to your playing.  `,
-  "10 minutes"
+  "10 minutes",
+  "guitar"
 );
 
 const secondArticle = new HomeContent(
@@ -42,7 +44,8 @@ const secondArticle = new HomeContent(
   "./img/drums1.jpg",
   "Explore the dynamic world of drumming with the best drum pattern that adds rhythm and groove to your beats. This pattern is renowned for its versatility, fitting seamlessly into various music genres. To master this drum pattern, focus on precise kick and snare placements, creating a solid foundation for your drumming skills.",
   "Experiment with different tempos and accents to unlock the full potential of this pattern and elevate your drumming to new heights.",
-  "15 minutes"
+  "15 minutes",
+  "drums"
 );
 
 const thirdArticle = new HomeContent(
@@ -50,7 +53,8 @@ const thirdArticle = new HomeContent(
   "./img/drums2.jpg",
   "Delve into the world of drum rudiments and discover the power of the best rudiment that can enhance your drumming technique. Known for its intricate sticking patterns and dynamic variations, this rudiment provides a solid foundation for drummers of all skill levels. Practice this rudiment with a metronome, gradually increasing speed for precision and control.",
   "Incorporate this rudiment into your drumming vocabulary, and witness how it adds flair and complexity to your drum fills and solos.",
-  "12 minutes"
+  "12 minutes",
+  "drums"
 );
 
 let arrayOfArticles = [firstArticle, secondArticle, thirdArticle];
