@@ -11,6 +11,7 @@
 html {
   height: 100vh;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -90,6 +91,26 @@ footer {
 footer p {
   text-align: center;
   color: white;
+}
+
+.scroll-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+.scroll-up button {
+  background-color: transparent;
+  border-style: none;
+}
+
+.scroll-img {
+  height: 35px;
+  width: 35px;
+}
+.scroll-up a {
+  transition: all 1s ease-in;
 }
 
 .wrapper {
