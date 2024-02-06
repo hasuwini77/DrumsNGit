@@ -39,7 +39,65 @@ const loadDarkModePreference = () => {
 
 darkButton.addEventListener("click", toggleDarkMode);
 
-document.addEventListener("DOMContentLoaded", loadDarkModePreference);
+/* COOKIES METHOD 1 
+
+setCookie("firstName", "SpongeBob", 365);
+setCookie("lastName", "SquarePants", 365);
+getCookie("firstName");
+getCookie("lastName");
+
+function setCookie(name, value, daysToLive) {
+  const date = new Date();
+  date.setTime(date.getTime() + daysToLive * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + date.toUTCString();
+  document.cookie = `${name}=${value}; ${expires}; path=/`;
+}
+
+function deleteCookie(name) {
+  setCookie(name, null, null);
+}
+function getCookie(name) {
+  const cDecoded = decodeURIComponent(document.cookie);
+  const cArray = cDecoded.split("; ");
+  let result;
+
+  cArray.forEach((element) => {
+    if (element.indexOf(name) == 0) {
+      result = element.substring(name.length + 1);
+    }
+  });
+  return result;
+} */
+
+// COOKIE METHOD 2
+
+const cookieBox = document.querySelector(".wrapper"),
+  buttons = document.querySelectorAll(".button");
+
+const executeCodes = () => {
+  //if cookie contains codinglab it will be returned and below of this code will not run
+  if (document.cookie.includes("DrumsNGit")) return;
+  cookieBox.classList.add("show");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      cookieBox.classList.remove("show");
+
+      //if button has acceptBtn id
+      if (button.id == "acceptBtn") {
+        //set cookies for 1 month. 60 = 1 min, 60 = 1 hours, 24 = 1 day, 30 = 30 days
+        document.cookie = "cookieBy= DrumsNGit; max-age=" + 60 * 60 * 24 * 30;
+      }
+    });
+  });
+};
+
+//executeCodes function will be called on webpage load
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadDarkModePreference();
+  executeCodes();
+});
 
 class HomeContent {
   constructor(title, image, description, para2, time, tag) {
