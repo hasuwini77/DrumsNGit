@@ -148,7 +148,7 @@ const showAllArticles = (articles) => {
 
   articles.forEach((article) => {
     divContent.innerHTML += ` 
-    <div class="article-content"> 
+    <div class="article-content" id="content"> 
   <h2> ${article.title} </h2>
   <img class="article-img" src="${article.image}" alt="${article.title}">
   <p class="article-desc"> ${article.description} </p> 
