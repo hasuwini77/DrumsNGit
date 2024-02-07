@@ -37,12 +37,20 @@ header {
   height: 100vh;
   background-color: #69a297;
   margin: 0;
+  position: relative;
 }
 
 .la-video {
   width: 100%;
   height: 100vh;
   object-fit: cover;
+}
+
+.scroll-btn {
+  position: relative;
+  bottom: 300px;
+  transform: translateX(50%);
+  right: 35px;
 }
 
 .main-content {
